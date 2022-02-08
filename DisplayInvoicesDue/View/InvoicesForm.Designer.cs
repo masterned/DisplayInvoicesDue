@@ -1,6 +1,6 @@
-﻿namespace DisplayInvoicesDue
+﻿namespace DisplayInvoicesDue.View
 {
-    partial class Form1
+    partial class InvoicesForm
     {
         /// <summary>
         /// Required designer variable.

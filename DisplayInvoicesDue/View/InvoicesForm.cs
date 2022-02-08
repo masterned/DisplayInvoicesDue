@@ -8,11 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using PayablesData;
 
-namespace DisplayInvoicesDue
+namespace DisplayInvoicesDue.View
 {
-    public partial class Form1 : Form
+    public partial class InvoicesForm : Form
     {
-        public Form1()
+        public InvoicesForm()
         {
             InitializeComponent();
         }
