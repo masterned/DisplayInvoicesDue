@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DisplayInvoicesDue.Controller;
 using PayablesData;
 
 namespace DisplayInvoicesDue.View
 {
     public partial class InvoicesForm : Form
     {
+        private InvoiceController _invoiceController;
+
         public InvoicesForm()
         {
             InitializeComponent();
+            _invoiceController = new InvoiceController();
         }
 
         private void getAllInvoicesButton_Click(object sender, EventArgs e)
@@ -22,7 +21,7 @@ namespace DisplayInvoicesDue.View
             List<Invoice> invoiceList;
             try
             {
-                invoiceList = InvoiceDB.GetInvoicesDue();
+                invoiceList = _invoiceController.GetInvoicesDue();
                 if (invoiceList.Count > 0)
                 {
                     Invoice invoice;

@@ -11,7 +11,7 @@ namespace PayablesData
         public static SqlConnection GetConnection()
         {
             string connectionString =
-                "Data Source=localhost\\SqlExpress;Initial Catalog=Payables;" +
+                "Data Source=localhost;Initial Catalog=Payables;" +
                 "Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
