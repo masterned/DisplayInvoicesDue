@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.lvInvoices = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.getAllInvoicesButton = new System.Windows.Forms.Button();
+            this.vendorIDLabel = new System.Windows.Forms.Label();
+            this.vendorIDTextBox = new System.Windows.Forms.TextBox();
+            this.getVendorInvoicesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvInvoices
@@ -48,7 +52,8 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
-            this.lvInvoices.Location = new System.Drawing.Point(13, 13);
+            this.lvInvoices.HideSelection = false;
+            this.lvInvoices.Location = new System.Drawing.Point(14, 50);
             this.lvInvoices.Name = "lvInvoices";
             this.lvInvoices.Size = new System.Drawing.Size(642, 241);
             this.lvInvoices.TabIndex = 0;
@@ -94,11 +99,51 @@
             this.columnHeader7.Text = "Due Date";
             this.columnHeader7.Width = 80;
             // 
+            // getAllInvoicesButton
+            // 
+            this.getAllInvoicesButton.AutoSize = true;
+            this.getAllInvoicesButton.Location = new System.Drawing.Point(14, 12);
+            this.getAllInvoicesButton.Name = "getAllInvoicesButton";
+            this.getAllInvoicesButton.Size = new System.Drawing.Size(91, 23);
+            this.getAllInvoicesButton.TabIndex = 1;
+            this.getAllInvoicesButton.Text = "Get All Invoices";
+            this.getAllInvoicesButton.UseVisualStyleBackColor = true;
+            // 
+            // vendorIDLabel
+            // 
+            this.vendorIDLabel.AutoSize = true;
+            this.vendorIDLabel.Location = new System.Drawing.Point(372, 15);
+            this.vendorIDLabel.Name = "vendorIDLabel";
+            this.vendorIDLabel.Size = new System.Drawing.Size(58, 13);
+            this.vendorIDLabel.TabIndex = 2;
+            this.vendorIDLabel.Text = "Vendor ID:";
+            // 
+            // vendorIDTextBox
+            // 
+            this.vendorIDTextBox.Location = new System.Drawing.Point(436, 12);
+            this.vendorIDTextBox.Name = "vendorIDTextBox";
+            this.vendorIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.vendorIDTextBox.TabIndex = 3;
+            // 
+            // getVendorInvoicesButton
+            // 
+            this.getVendorInvoicesButton.AutoSize = true;
+            this.getVendorInvoicesButton.Location = new System.Drawing.Point(542, 12);
+            this.getVendorInvoicesButton.Name = "getVendorInvoicesButton";
+            this.getVendorInvoicesButton.Size = new System.Drawing.Size(114, 23);
+            this.getVendorInvoicesButton.TabIndex = 4;
+            this.getVendorInvoicesButton.Text = "Get Vendor Invoices";
+            this.getVendorInvoicesButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 266);
+            this.ClientSize = new System.Drawing.Size(668, 303);
+            this.Controls.Add(this.getVendorInvoicesButton);
+            this.Controls.Add(this.vendorIDTextBox);
+            this.Controls.Add(this.vendorIDLabel);
+            this.Controls.Add(this.getAllInvoicesButton);
             this.Controls.Add(this.lvInvoices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
@@ -106,6 +151,7 @@
             this.Text = "Invoices by Due Date";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -119,6 +165,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button getAllInvoicesButton;
+        private System.Windows.Forms.Label vendorIDLabel;
+        private System.Windows.Forms.TextBox vendorIDTextBox;
+        private System.Windows.Forms.Button getVendorInvoicesButton;
     }
 }
 
