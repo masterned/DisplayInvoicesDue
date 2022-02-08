@@ -20,5 +20,10 @@ namespace DisplayInvoicesDue.Controller
         {
             return _invoiceDAL.GetInvoicesDue();
         }
+
+        public List<Invoice> GetVendorInvoicesDue(int vendorID)
+        {
+            return _invoiceDAL.GetVendorInvoicesDue(vendorID);
+        }
     }
 }

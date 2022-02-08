@@ -18,6 +18,8 @@ namespace DisplayInvoicesDue.View
 
         private void getAllInvoicesButton_Click(object sender, EventArgs e)
         {
+            lvInvoices.Items.Clear();
+
             List<Invoice> invoiceList;
             try
             {
@@ -48,6 +50,50 @@ namespace DisplayInvoicesDue.View
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
                 this.Close();
+            }
+        }
+
+        private void getVendorInvoicesButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(vendorIDTextBox.Text))
+            {
+                MessageBox.Show("VendorID cannot be null or empty", "Heads Up!");
+                return;
+            }
+            
+            lvInvoices.Items.Clear();
+
+            try
+            {
+                int vendorID = int.Parse(vendorIDTextBox.Text);
+                
+                List<Invoice> invoiceList = _invoiceController.GetVendorInvoicesDue(vendorID);
+
+                if (invoiceList.Count > 0)
+                {
+                    Invoice invoice;
+                    for (int i = 0; i < invoiceList.Count; i++)
+                    {
+                        invoice = invoiceList[i];
+                        lvInvoices.Items.Add(invoice.InvoiceNumber);
+                        lvInvoices.Items[i].SubItems.Add(invoice.InvoiceDate.ToShortDateString());
+                        lvInvoices.Items[i].SubItems.Add(invoice.InvoiceTotal.ToString("c"));
+                        lvInvoices.Items[i].SubItems.Add(invoice.PaymentTotal.ToString("c"));
+                        lvInvoices.Items[i].SubItems.Add(invoice.CreditTotal.ToString("c"));
+                        lvInvoices.Items[i].SubItems.Add(invoice.BalanceDue().ToString("c"));
+                        lvInvoices.Items[i].SubItems.Add(invoice.DueDate.ToShortDateString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("All invoices are paid in full.",
+                        "No Balance Due");
+                    this.Close();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, exception.GetType().ToString());
             }
         }
     }

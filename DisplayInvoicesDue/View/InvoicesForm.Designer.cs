@@ -137,6 +137,7 @@
             this.getVendorInvoicesButton.TabIndex = 4;
             this.getVendorInvoicesButton.Text = "Get Vendor Invoices";
             this.getVendorInvoicesButton.UseVisualStyleBackColor = true;
+            this.getVendorInvoicesButton.Click += new System.EventHandler(this.getVendorInvoicesButton_Click);
             // 
             // totalBalanceDueTextBox
             // 
