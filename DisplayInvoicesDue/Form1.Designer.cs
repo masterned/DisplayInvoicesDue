@@ -40,6 +40,8 @@
             this.vendorIDLabel = new System.Windows.Forms.Label();
             this.vendorIDTextBox = new System.Windows.Forms.TextBox();
             this.getVendorInvoicesButton = new System.Windows.Forms.Button();
+            this.totalBalanceDueTextBox = new System.Windows.Forms.TextBox();
+            this.totalBalanceDueLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lvInvoices
@@ -135,11 +137,29 @@
             this.getVendorInvoicesButton.Text = "Get Vendor Invoices";
             this.getVendorInvoicesButton.UseVisualStyleBackColor = true;
             // 
+            // totalBalanceDueTextBox
+            // 
+            this.totalBalanceDueTextBox.Location = new System.Drawing.Point(485, 297);
+            this.totalBalanceDueTextBox.Name = "totalBalanceDueTextBox";
+            this.totalBalanceDueTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalBalanceDueTextBox.TabIndex = 5;
+            // 
+            // totalBalanceDueLabel
+            // 
+            this.totalBalanceDueLabel.AutoSize = true;
+            this.totalBalanceDueLabel.Location = new System.Drawing.Point(383, 300);
+            this.totalBalanceDueLabel.Name = "totalBalanceDueLabel";
+            this.totalBalanceDueLabel.Size = new System.Drawing.Size(96, 13);
+            this.totalBalanceDueLabel.TabIndex = 6;
+            this.totalBalanceDueLabel.Text = "Total Balance Due";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 303);
+            this.ClientSize = new System.Drawing.Size(668, 328);
+            this.Controls.Add(this.totalBalanceDueLabel);
+            this.Controls.Add(this.totalBalanceDueTextBox);
             this.Controls.Add(this.getVendorInvoicesButton);
             this.Controls.Add(this.vendorIDTextBox);
             this.Controls.Add(this.vendorIDLabel);
@@ -169,6 +189,8 @@
         private System.Windows.Forms.Label vendorIDLabel;
         private System.Windows.Forms.TextBox vendorIDTextBox;
         private System.Windows.Forms.Button getVendorInvoicesButton;
+        private System.Windows.Forms.TextBox totalBalanceDueTextBox;
+        private System.Windows.Forms.Label totalBalanceDueLabel;
     }
 }
 
