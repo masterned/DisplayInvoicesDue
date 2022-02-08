@@ -24,6 +24,9 @@ namespace DisplayInvoicesDue.View
             try
             {
                 invoiceList = _invoiceController.GetInvoicesDue();
+
+                totalBalanceDueTextBox.Text = _invoiceController.GetTotalBalanceDue().ToString("c");
+
                 if (invoiceList.Count > 0)
                 {
                     Invoice invoice;
@@ -66,6 +69,8 @@ namespace DisplayInvoicesDue.View
             try
             {
                 int vendorID = int.Parse(vendorIDTextBox.Text);
+
+                totalBalanceDueTextBox.Text = _invoiceController.GetVendorBalanceDue(vendorID).ToString("c");
                 
                 List<Invoice> invoiceList = _invoiceController.GetVendorInvoicesDue(vendorID);
 

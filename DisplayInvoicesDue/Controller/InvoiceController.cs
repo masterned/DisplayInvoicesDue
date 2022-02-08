@@ -25,5 +25,15 @@ namespace DisplayInvoicesDue.Controller
         {
             return _invoiceDAL.GetVendorInvoicesDue(vendorID);
         }
+
+        public decimal GetTotalBalanceDue()
+        {
+            return _invoiceDAL.GetTotalBalanceDue();
+        }
+
+        public decimal GetVendorBalanceDue(int vendorID)
+        {
+            return _invoiceDAL.GetVendorBalanceDue(vendorID);
+        }
     }
 }
