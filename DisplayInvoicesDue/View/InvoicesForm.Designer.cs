@@ -110,6 +110,7 @@
             this.getAllInvoicesButton.TabIndex = 1;
             this.getAllInvoicesButton.Text = "Get All Invoices";
             this.getAllInvoicesButton.UseVisualStyleBackColor = true;
+            this.getAllInvoicesButton.Click += new System.EventHandler(this.getAllInvoicesButton_Click);
             // 
             // vendorIDLabel
             // 
@@ -153,7 +154,7 @@
             this.totalBalanceDueLabel.TabIndex = 6;
             this.totalBalanceDueLabel.Text = "Total Balance Due";
             // 
-            // Form1
+            // InvoicesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,10 +167,9 @@
             this.Controls.Add(this.getAllInvoicesButton);
             this.Controls.Add(this.lvInvoices);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "InvoicesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invoices by Due Date";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
